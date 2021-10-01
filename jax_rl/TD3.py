@@ -14,8 +14,9 @@ from jax_rl.saving import save_model
 from jax_rl.utils import copy_params
 from jax_rl.utils import double_mse
 
+from functools import partial
 
-@jax.partial(jax.jit, static_argnums=(6, 7, 8, 9, 10))
+@partial(jax.jit, static_argnums=(6, 7, 8, 9, 10))
 def get_td_target(
     rng: PRNGSequence,
     state: jnp.ndarray,
@@ -69,7 +70,7 @@ def critic_step(
     return optimizer.apply_gradient(grad)
 
 
-@jax.partial(jax.jit, static_argnums=(2, 3))
+@partial(jax.jit, static_argnums=(2, 3))
 def actor_step(
     optimizer: optim.Optimizer,
     critic_params: FrozenDict,
