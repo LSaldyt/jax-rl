@@ -1,10 +1,11 @@
+from functools import partial
+
 import jax
 import jax.numpy as jnp
 from flax import linen as nn
 from flax.core.frozen_dict import FrozenDict
 from haiku import PRNGSequence
 from jax import random
-from functools import partial
 
 from jax_rl.utils import gaussian_likelihood
 

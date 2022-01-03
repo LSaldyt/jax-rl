@@ -1,3 +1,5 @@
+from functools import partial
+
 import jax
 import jax.numpy as jnp
 from flax import optim
@@ -14,7 +16,6 @@ from jax_rl.saving import save_model
 from jax_rl.utils import copy_params
 from jax_rl.utils import double_mse
 
-from functools import partial
 
 @partial(jax.jit, static_argnums=(6, 7, 8, 9, 10))
 def get_td_target(

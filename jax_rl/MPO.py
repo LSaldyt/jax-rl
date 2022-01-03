@@ -12,7 +12,6 @@ from jax import random
 from jax.experimental.optimizers import clip_grads
 from jax.scipy.special import logsumexp
 from scipy.optimize import minimize
-from functools import partial
 
 from jax_rl.buffers import ReplayBuffer
 from jax_rl.models import apply_constant_model
